@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-
+import mongoose from "mongoose";
 const ratingSchema = new mongoose.Schema({
   blog_id: {
     type: mongoose.Schema.Types.ObjectId,
@@ -24,4 +23,5 @@ const ratingSchema = new mongoose.Schema({
 // Compound index to ensure one rating per user per blog
 ratingSchema.index({ blog_id: 1, user_id: 1 }, { unique: true });
 
-module.exports = mongoose.model('Rating', ratingSchema);
+const Rating = mongoose.model('Rating', ratingSchema);
+export default Rating;

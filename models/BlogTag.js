@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const blogTagSchema = new mongoose.Schema({
   blog_id: {
@@ -18,4 +18,5 @@ const blogTagSchema = new mongoose.Schema({
 // Compound index to prevent duplicate blog-tag combinations
 blogTagSchema.index({ blog_id: 1, tag_id: 1 }, { unique: true });
 
-module.exports = mongoose.model('BlogTag', blogTagSchema);
+const BlogTag = mongoose.model('BlogTag', blogTagSchema);
+export default BlogTag;

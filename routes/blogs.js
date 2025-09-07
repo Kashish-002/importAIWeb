@@ -1,8 +1,8 @@
 import express from 'express';
 import { body, param, query, validationResult } from 'express-validator';
-import {Blog, BlogTag, Tag, Comment, Rating, User } from '../models';
-import {authenticate, authorize, checkOwnership, optionalAuth } from '../middleware/auth';
-import { sanitizeContent, rateLimits } from '../middleware/security';
+import {Blog, BlogTag, Tag, Comment, Rating, User } from '../models/index.js';
+import {authenticate, authorize, checkOwnership, optionalAuth } from '../middleware/auth.js';
+import { sanitizeContent, rateLimits } from '../middleware/security.js';
 
 const router = express.Router();
 
